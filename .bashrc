@@ -6,7 +6,7 @@ export TERM=xterm-256color
 # append to the history file, don't overwrite it
 shopt -s histappend
 
-source /usr/share/doc/git-1.7.1/contrib/completion/git-completion.bash
+source ~/.git-completion.bash
 
 function parse_git_dirty {
     [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
