@@ -5,16 +5,14 @@ export TERM=xterm-256color
 
 # append to the history file, don't overwrite it
 shopt -s histappend
+# Resize the window if necessary
+shopt -s checkwinsize
 
 source ~/.git-completion.bash
 
-function parse_git_dirty {
-    [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
-}
-
-function parse_git_branch {
-    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
-}
+if [ -f ~/.bash_functions ]; then
+    . ~/.bash_functions
+fi
 
 if [ -f ~/.bash_colors ]; then
     . ~/.bash_colors
@@ -23,8 +21,8 @@ fi
 USER="${BBlue}\u${NC}"
 AT="${BBlue}@${NC}"
 HOST="${BBlue}\h${NC}"
-DIR="${BYellow}\w${NC}"
-PROMPT="${White}\$${NC}"
+DIR="${BYellow}\$(working_directory)${NC}"
+PROMPT="${BBlue}\$${NC}"
 
 BRANCH="${BBlue}%s${NC}"
 DIRTY="${BYellow}\$(parse_git_dirty)${NC}"
