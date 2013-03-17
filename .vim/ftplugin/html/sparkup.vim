@@ -1,0 +1,91 @@
+" Sparkup
+" Installation:
+"    Copy the contents of vim/ftplugin/ to your ~/.vim/ftplugin directory.
+"
+"        $ cp -R vim/ftplugin ~/.vim/ftplugin/
+"
+" Configuration:
+"   g:sparkup (Default: 'sparkup') -
+"     Location of the sparkup executable. You shouldn't need to change this
+"     setting if you used the install option above.
+"
+"   g:sparkupArgs (Default: '--no-last-newline') -
+"     Additional args passed to sparkup.
+"
+"   g:sparkupExecuteMapping (Default: '<c-e>') -
+"     Mapping used to execute sparkup.
+"
+"   g:sparkupNextMapping (Default: '<c-n>') -
+"     Mapping used to jump to the next empty tag/attribute.
+
+if !exists('g:sparkupExecuteMapping')
+  let g:sparkupExecuteMapping = '<c-e>'
+endif
+
+if !exists('g:sparkupNextMapping')
+  let g:sparkupNextMapping = '<c-n>'
+endif
+
+if !exists('g:sparkupPrevMapping')
+  let g:sparkupPrevMapping = '<c-b>'
+endif
+
+inoremap <buffer> <Plug>SparkupExecute <c-g>u<Esc>:call <SID>Sparkup()<cr>
+inoremap <buffer> <Plug>SparkupNext    <c-g>u<Esc>:call <SID>SparkupSearch('next')<cr>
+inoremap <buffer> <Plug>SparkupPrev    <c-g>u<Esc>:call <SID>SparkupSearch('prev')<cr>
+
+if ! hasmapto('<Plug>SparkupExecute', 'i')
+  exec 'imap <buffer> ' . g:sparkupExecuteMapping . ' <Plug>SparkupExecute'
+endif
+if ! hasmapto('<Plug>SparkupNext', 'i')
+  exec 'imap <buffer> ' . g:sparkupNextMapping . ' <Plug>SparkupNext'
+endif
+if ! hasmapto('<Plug>SparkupPrev', 'i')
+  exec 'imap <buffer> ' . g:sparkupPrevMapping . ' <Plug>SparkupPrev'
+endif
+
+if exists('*s:Sparkup')
+    finish
+endif
+
+function! s:Sparkup()
+    if !exists('s:sparkup')
+        let s:sparkup = exists('g:sparkup') ? g:sparkup : 'sparkup'
+        let s:sparkupArgs = exists('g:sparkupArgs') ? g:sparkupArgs : '--no-last-newline'
+        " check the user's path first. if not found then search relative to
+        " sparkup.vim in the runtimepath.
+        if !executable(s:sparkup)
+            let paths = substitute(escape(&runtimepath, ' '), '\(,\|$\)', '/**\1', 'g')
+            let s:sparkup = findfile('sparkup.py', paths)
+
+            if !filereadable(s:sparkup)
+                echohl WarningMsg
+                echom 'Warning: could not find sparkup on your path or in your vim runtime path.'
+                echohl None
+                finish
+            endif
+        endif
+        let s:sparkup = '"' . s:sparkup . '"'
+        let s:sparkup .= printf(' %s --indent-spaces=%s', s:sparkupArgs, &shiftwidth)
+        if has('win32') || has('win64')
+            let s:sparkup = 'python ' . s:sparkup
+        endif
+    endif
+    exec '.!' . s:sparkup
+    call s:SparkupSearch('')
+endfunction
+
+function! s:SparkupSearch(direction)
+    let param = ''
+    if a:direction == 'prev'
+        let param .= 'b'
+    endif
+    execute 'normal l'
+    let n = search('>\zs<\/\|"\zs"\|\(^\s*\zs$\)', 'Wp' . param)
+
+    if n == 2
+        startinsert!
+    else
+        startinsert
+    endif
+endfunction

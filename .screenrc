@@ -1,0 +1,2 @@
+term xterm
+caption always '%{yk} %H %{w}%L=%= %{w}%?%-Lw%45L>%?%{=b kR}[%{W}%n%f %t%?(%u)%?%{=b kR}]%{= kw}%?%+Lw%?%?%=%-18= %{= w} %m/%d %c:%s %{W}'
