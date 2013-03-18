@@ -85,3 +85,5 @@ let loaded_delimitMate = 1
 let delimitMate_balance_matchpairs = 1
 let delimitMate_expand_space = 1
 let delimitMate_expand_cr = 1
+"CtrlP
+set runtimepath^=~/.vim/bundle/ctrlp.vim
