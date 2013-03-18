@@ -22,7 +22,7 @@ USER="${BBlue}\u${NC}"
 AT="${BBlue}@${NC}"
 HOST="${BBlue}\h${NC}"
 DIR="${BYellow}\$(working_directory)${NC}"
-PROMPT="${BBlue}\$${NC}"
+PROMPT="${BBlue}>${NC}"
 
 BRANCH="${BBlue}%s${NC}"
 DIRTY="${BYellow}\$(parse_git_dirty)${NC}"
