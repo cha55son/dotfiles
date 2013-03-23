@@ -32,10 +32,10 @@ function! s:init()
     exec 'hi gitGutterAdd    ctermfg=darkgreen  guifg=#00ee00 ctermbg=black guibg=' . guibg . ' cterm=bold gui=bold'
     exec 'hi gitGutterDelete ctermfg=darkred    guifg=#dd0000 ctermbg=black guibg=' . guibg . ' cterm=bold gui=bold'
 
-    sign define change        text=! texthl=gitGutterChange
+    sign define change        text=~ texthl=gitGutterChange
     sign define add           text=+ texthl=gitGutterAdd
-    sign define delete_top    text=^ texthl=gitGutterDelete
-    sign define delete_bottom text=_ texthl=gitGutterDelete
+    sign define delete_top    text=! texthl=gitGutterDelete
+    sign define delete_bottom text=! texthl=gitGutterDelete
 endfunction
 
 
