@@ -28,14 +28,14 @@ function! s:init()
     let guibg = s:get_sign_guibg()
 
     exec 'hi SignColumn      ctermbg=black'
-    exec 'hi gitGutterChange ctermfg=darkyellow guifg=#ffcc00 ctermbg=black guibg=' . guibg . ' cterm=bold gui=bold'
-    exec 'hi gitGutterAdd    ctermfg=darkgreen  guifg=#00ee00 ctermbg=black guibg=' . guibg . ' cterm=bold gui=bold'
-    exec 'hi gitGutterDelete ctermfg=darkred    guifg=#dd0000 ctermbg=black guibg=' . guibg . ' cterm=bold gui=bold'
+    exec 'hi gitGutterChange ctermfg=192 guifg=#FFCC00 ctermbg=black guibg=' . guibg . ' cterm=bold gui=bold'
+    exec 'hi gitGutterAdd    ctermfg=113  guifg=#00ee00 ctermbg=black guibg=' . guibg . ' cterm=bold gui=bold'
+    exec 'hi gitGutterDelete ctermfg=173    guifg=#dd0000 ctermbg=black guibg=' . guibg . ' cterm=bold gui=bold'
 
-    sign define change        text=~ texthl=gitGutterChange
+    sign define change        text=⨠ texthl=gitGutterChange
     sign define add           text=+ texthl=gitGutterAdd
-    sign define delete_top    text=! texthl=gitGutterDelete
-    sign define delete_bottom text=! texthl=gitGutterDelete
+    sign define delete_top    text=⊼ texthl=gitGutterDelete
+    sign define delete_bottom text=⊻ texthl=gitGutterDelete
 endfunction
 
 
