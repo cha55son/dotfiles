@@ -26,6 +26,11 @@ set completeopt+=menuone,preview
 set mouse=a
 set ttymouse=xterm2
 set scrolloff=6
+set swapfile
+set dir=~/tmp
+set backup
+set backupdir=~/tmp
+
 let mapleader = ","
 map <C-S> :w<CR>
 imap <C-S> <ESC>:w<CR>
@@ -42,6 +47,8 @@ map <silent> <leader>h :nohl<CR>
 map <silent> <leader>e :NERDTreeToggle<CR>
 nmap <silent> <leader>v :tabedit $MYVIMRC<CR>
 nmap <silent> <leader>s :source $MYVIMRC<CR>
+nmap <silent> <leader>n :set nonumber!<CR>
+nmap <silent> <leader>p :set nopaste!<CR>
 
 map <expr> <F2> &mouse == "" ? ":set mouse=a<CR>" : ":set mouse=<CR>"
 imap <expr> <F2> &mouse == "" ? "<Esc>:set mouse=a<CR>a" : "<Esc>:set mouse=<CR>a"
