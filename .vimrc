@@ -31,9 +31,13 @@ set dir=~/tmp
 set backup
 set backupdir=~/tmp
 
-let mapleader = ","
-map <C-S> :w<CR>
-imap <C-S> <ESC>:w<CR>
+noremap <silent> <C-S>  :update<CR>
+vnoremap <silent> <C-S> <C-C>:update<CR>
+inoremap <silent> <C-S> <C-O>:update<CR>
+noremap <silent> <C-Q>  :quit<CR>
+vnoremap <silent> <C-Q> <C-C>:quit<CR>
+inoremap <silent> <C-Q> <C-O>:quit<CR>
+
 "inoremap <expr><silent> <S-Tab> pumvisible() ? "\<C-y>" : "<C-R>=Savecursor()<CR><C-X><C-O><C-P><Down><C-R>=Restorecursor()<CR>"
 "inoremap <expr> <Tab>           pumvisible() ? "\<C-y>" : "\<Tab>"
 "inoremap <expr> <CR>            pumvisible() ? "\<C-y>" : "\<CR>"
@@ -41,8 +45,7 @@ imap <C-S> <ESC>:w<CR>
 "inoremap <expr> <Up>            pumvisible() ? "\<C-p>" : "\<Up>"
 "inoremap <expr> <PageDown>      pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
 "inoremap <expr> <PageUp>        pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
-map <C-Q> :q<CR>
-imap <C-Q> <Esc>:q<CR>
+let mapleader = ","
 map <silent> <leader>h :nohl<CR>
 map <silent> <leader>e :NERDTreeToggle<CR>
 nmap <silent> <leader>v :tabedit $MYVIMRC<CR>
@@ -92,3 +95,5 @@ let loaded_delimitMate = 1
 let delimitMate_balance_matchpairs = 1
 let delimitMate_expand_space = 1
 let delimitMate_expand_cr = 1
+"powerline
+set rtp+=~/.vim/bundle/powerline/bindings/vim
