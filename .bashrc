@@ -47,4 +47,4 @@ umask 0022
 # allow Ctrl-S and Ctrl-Q
 stty -ixon
 export EDITOR=vim
-export PATH=$PATH:$HOME/bin:/usr/bin/pyflakes
+export PATH=$PATH:$HOME/bin:/usr/bin/pyflakes:/usr/local/sbin
