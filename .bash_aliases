@@ -13,3 +13,6 @@ alias gits='git status'
 alias gitb='git branch'
 alias vim='vim -p'
 alias flushdns='sudo killall -HUP mDNSResponder'
+
+alias mysqlstart='sudo /usr/local/mysql/support-files/mysql.server start'
+alias mysqlstop='sudo /usr/local/mysql/support-files/mysql.server stop'
