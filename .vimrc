@@ -32,11 +32,11 @@ set backup
 set backupdir=~/tmp
 
 noremap <silent> <C-S>  :update<CR>
-vnoremap <silent> <C-S> <C-C>:update<CR>
-inoremap <silent> <C-S> <C-O>:update<CR>
+vnoremap <silent> <C-S> <ESC>:update<CR>
+inoremap <silent> <C-S> <ESC>:update<CR>
 noremap <silent> <C-Q>  :quit<CR>
-vnoremap <silent> <C-Q> <C-C>:quit<CR>
-inoremap <silent> <C-Q> <C-O>:quit<CR>
+vnoremap <silent> <C-Q> <ESC>:quit<CR>
+inoremap <silent> <C-Q> <ESC>:quit<CR>
 
 "inoremap <expr><silent> <S-Tab> pumvisible() ? "\<C-y>" : "<C-R>=Savecursor()<CR><C-X><C-O><C-P><Down><C-R>=Restorecursor()<CR>"
 "inoremap <expr> <Tab>           pumvisible() ? "\<C-y>" : "\<Tab>"
