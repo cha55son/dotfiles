@@ -3,3 +3,5 @@
 	email = chason@bondware.com
 [color]
 	ui = auto
+[push]
+	default = simple
