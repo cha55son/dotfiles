@@ -27,9 +27,9 @@ set mouse=a
 set ttymouse=xterm2
 set scrolloff=6
 set swapfile
-set dir=~/tmp
+set dir=~/.tmp
 set backup
-set backupdir=~/tmp
+set backupdir=~/.tmp
 
 let mapleader = ","
 map <C-S> :w<CR>
