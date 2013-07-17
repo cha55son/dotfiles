@@ -3,14 +3,21 @@ set nocompatible
 set t_Co=256
 set mouse=a
 set ttymouse=xterm2
-set dir=~/tmp
-set backupdir=~/tmp
 set backup
 set pastetoggle=<F3>
 set noswapfile
 set number
 set showcmd
 set showmode
+set shiftround
+set smartindent
+set wildmenu
+set confirm
+set completeopt+=menuone,preview
+set scrolloff=6
+set dir=~/.tmp
+set backup
+set backupdir=~/.tmp
 
 set history=1000
 " Enable filetype plugins

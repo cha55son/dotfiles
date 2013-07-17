@@ -47,4 +47,4 @@ umask 0022
 # allow Ctrl-S and Ctrl-Q
 stty -ixon
 export EDITOR=vim
-export PATH=$PATH:$HOME/bin:/usr/bin/pyflakes:/usr/local/sbin:/Users/ccchoate21/Desktop/Android/sdk/platform-tools
+export PATH=$PATH:$HOME/bin:/usr/bin/pyflakes:/usr/local/sbin:/Users/ccchoate21/Desktop/Android/sdk/platform-tools:/usr/local/share/npm/bin
