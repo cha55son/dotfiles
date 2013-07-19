@@ -1,5 +1,5 @@
 function parse_git_dirty {
-    [[ $(git status 2> /dev/null | tail -n1 | grep 'working directory clean' | wc -l) != "1" ]] && echo "*"
+    [[ $(git status 2> /dev/null | tail -n1 | grep 'working directory clean' | wc -l | awk '{ print $1 }') != "1" ]] && echo "*"
 }
 
 function parse_git_branch {
