@@ -1,0 +1,3 @@
+[submodule ".vim/bundle/htmlvalidator"]
+	path = .vim/bundle/htmlvalidator
+	url = https://github.com/sorin-ionescu/vim-htmlvalidator.git

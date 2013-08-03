@@ -119,3 +119,6 @@ function! HasPaste()
     en
     return ''
 endfunction
+
+au FileType html compiler html
+au QuickFixCmdPost make cwindow
