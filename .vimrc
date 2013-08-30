@@ -34,13 +34,6 @@ set backupdir=~/.tmp
 let mapleader = ","
 map <C-S> :w<CR>
 imap <C-S> <ESC>:w<CR>
-"inoremap <expr><silent> <S-Tab> pumvisible() ? "\<C-y>" : "<C-R>=Savecursor()<CR><C-X><C-O><C-P><Down><C-R>=Restorecursor()<CR>"
-"inoremap <expr> <Tab>           pumvisible() ? "\<C-y>" : "\<Tab>"
-"inoremap <expr> <CR>            pumvisible() ? "\<C-y>" : "\<CR>"
-"inoremap <expr> <Down>          pumvisible() ? "\<C-n>" : "\<Down>"
-"inoremap <expr> <Up>            pumvisible() ? "\<C-p>" : "\<Up>"
-"inoremap <expr> <PageDown>      pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
-"inoremap <expr> <PageUp>        pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
 map <C-Q> :q<CR>
 imap <C-Q> <Esc>:q<CR>
 map <silent> <leader>h :nohl<CR>
@@ -64,31 +57,5 @@ runtime macros/matchit.vim
 
 au BufNewFile,BufRead *.soy set filetype=php
 
-let g:sparkupArgs = "--no-last-newline --expand-divs"
-
-if $TERM =~ '^screen'
-    set t_Co=256
-    nmap <Esc>OH <Home>
-    imap <Esc>OH <Home>
-    nmap <Esc>OF <End>
-    imap <Esc>OF <End>
-endif
-
-function! Savecursor()
-    let g:savedcursorline = line(".")
-    let g:savedcursorcol = col(".")
-    return ""
-endf
-
-function! Restorecursor()
-    call cursor(g:savedcursorline, g:savedcursorcol)
-    return ""
-endf
-
-call pathogen#infect()
-
-"delimitMate
-let loaded_delimitMate = 1
-let delimitMate_balance_matchpairs = 1
-let delimitMate_expand_space = 1
-let delimitMate_expand_cr = 1
+execute pathogen#infect()
+set laststatus=2
