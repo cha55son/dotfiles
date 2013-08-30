@@ -44,7 +44,6 @@ fi
 
 # set custom umask
 umask 0022
-# allow Ctrl-S and Ctrl-Q
 stty -ixon
 export EDITOR=vim
-export PATH=$PATH:$HOME/bin:/usr/bin/pyflakes:/usr/local/sbin:/Users/ccchoate21/Desktop/Android/sdk/platform-tools:/usr/local/share/npm/bin
+export PATH=$PATH:/usr/local/share/npm/bin:/usr/local/Cellar/ruby/2.0.0-p247/bin
