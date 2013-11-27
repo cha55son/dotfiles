@@ -11,6 +11,7 @@ alias tmuxl='tmux list-sessions'
 alias tmuxa='tmux attach-session -d -t'
 alias gits='git status'
 alias gitb='git branch'
+alias hgs='hg status'
 alias vim='vim -p'
 
 alias flushdns='sudo killall -HUP mDNSResponder'

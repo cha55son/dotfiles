@@ -3,7 +3,6 @@ set nocompatible
 set t_Co=256
 set mouse=a
 set ttymouse=xterm2
-set backup
 set pastetoggle=<F3>
 set noswapfile
 set number
@@ -81,19 +80,6 @@ set si "Smart indent
 set wrap "Wrap lines"
 " Always show the status line
 set laststatus=2
-" Format the status line
-set statusline=%t       "tail of the filename
-set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
-set statusline+=%{&ff}] "file format
-set statusline+=%h      "help file flag
-set statusline+=%m      "modified flag
-set statusline+=%r      "read only flag
-set statusline+=%y      "filetype
-set statusline+=\ CWD:\ %r%{getcwd()}%h
-set statusline+=%=      "left/right separator
-set statusline+=%c,     "cursor column
-set statusline+=%l/%L   "cursor line/total lines
-set statusline+=\ %P    "percent through file
 
 noremap <silent> <C-S>  :update<CR>
 noremap <silent> <C-Q>  :quit<CR>
@@ -109,8 +95,6 @@ nmap <silent> <leader>n :set nonumber!<CR>
 
 call pathogen#infect()
 call pathogen#helptags()
-
-let g:Powerline_symbols = "fancy"
 
 " Returns true if paste mode is enabled
 function! HasPaste()
