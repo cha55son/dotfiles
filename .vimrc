@@ -106,3 +106,14 @@ endfunction
 
 au FileType html compiler html
 au QuickFixCmdPost make cwindow
+let g:signify_vcs_list = [ 'hg', 'git' ]
+let g:signify_sign_add               = '+'
+let g:signify_sign_change            = '!'
+let g:signify_sign_delete            = '⊻'
+let g:signify_sign_delete_first_line = '⊼'
+highlight DiffAdd           cterm=bold ctermbg=none ctermfg=119
+highlight DiffDelete        cterm=bold ctermbg=none ctermfg=167
+highlight DiffChange        cterm=bold ctermbg=none ctermfg=227
+highlight SignifySignAdd    cterm=bold ctermbg=0  ctermfg=2
+highlight SignifySignDelete cterm=bold ctermbg=0  ctermfg=1
+highlight SignifySignChange cterm=bold ctermbg=0  ctermfg=2
