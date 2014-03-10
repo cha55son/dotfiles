@@ -1,12 +1,12 @@
-[submodule ".vim/bundle/htmlvalidator"]
-	path = .vim/bundle/htmlvalidator
-	url = https://github.com/sorin-ionescu/vim-htmlvalidator.git
 [submodule ".vim/bundle/vim-signify"]
 	path = .vim/bundle/vim-signify
 	url = https://github.com/mhinz/vim-signify.git
-[submodule "/Users/chason/.vim/bundle/vim-coffee-script"]
-	path = /Users/chason/.vim/bundle/vim-coffee-script
+[submodule ".vim/bundle/vim-coffee-script"]
+	path = .vim/bundle/vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
 [submodule ".vim/bundle/vim-airline"]
 	path = .vim/bundle/vim-airline
 	url = git@github.com:bling/vim-airline.git
+[submodule ".vim/bundle/git-gutter-vim"]
+	path = .vim/bundle/git-gutter-vim
+	url = git@github.com:akiomik/git-gutter-vim.git
