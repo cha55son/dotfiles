@@ -1,7 +1,9 @@
 [user]
 	name = Chason Choate
-	email = chason@bondware.com
+	email = cha55son@gmail.com
 [color]
 	ui = auto
 [push]
 	default = simple
+[credential]
+	helper = osxkeychain

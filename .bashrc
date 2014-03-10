@@ -46,4 +46,12 @@ fi
 umask 0022
 stty -ixon
 export EDITOR=vim
-export PATH=$PATH:/usr/local/share/npm/bin:/usr/local/Cellar/ruby/2.0.0-p247/bin
+export PATH=/usr/local/sbin:/usr/local/bin:$PATH:/usr/local/share/npm/bin:/usr/local/Cellar/ruby/2.0.0-p247/bin
+
+export PATH=/Users/chason/bin/Sencha/Cmd/4.0.2.67:$PATH
+
+export SENCHA_CMD_3_0_0="/Users/chason/bin/Sencha/Cmd/4.0.2.67"
+
+if [ -n "$VIRTUAL_ENV" ]; then
+    . "$VIRTUAL_ENV/bin/activate"
+fi
