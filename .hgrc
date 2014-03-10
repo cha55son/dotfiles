@@ -1,0 +1,21 @@
+[extensions]
+mercurial_keyring =
+hgext.mercurial_keyring = /Library/Python/2.7/site-packages/hgext/mecurial_keyring.py
+graphlog = 
+histedit =
+strip =
+mq =
+rebase =
+
+[ui]
+username = Chason Choate <chason.choate@digitalreasoning.com>
+ignore = ~/.hgignore
+
+[hostfingerprints]
+hg.corp.digitalreasoning.com = 34:3A:93:37:30:6A:0D:7C:16:2F:5E:68:83:E3:FE:01:99:9E:A9:11
+
+[auth]
+drsi.prefix = hg.corp.digitalreasoning.com
+drsi.username = chason.choate
+drsi.schemes = https
+
