@@ -1,6 +1,5 @@
 [extensions]
 mercurial_keyring =
-hgext.mercurial_keyring = /Library/Python/2.7/site-packages/hgext/mecurial_keyring.py
 graphlog = 
 histedit =
 strip =

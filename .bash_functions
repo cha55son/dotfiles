@@ -1,3 +1,6 @@
+shopt -s expand_aliases
+source ~/.bash_aliases
+
 function parse_git_dirty {
     [[ $(git status 2> /dev/null | tail -n1 | grep 'working directory clean' | wc -l | awk '{ print $1 }') != "1" ]] && echo "*"
 }
@@ -39,3 +42,12 @@ working_directory() {
         echo $dir
     fi
 } 
+
+function cl {
+    if [[ -z "$1" ]] ; then
+        echo "cl (Change and List) expects a directory path."
+    else
+        cd $1
+        lh
+    fi
+}
