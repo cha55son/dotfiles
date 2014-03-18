@@ -6,6 +6,7 @@ histedit =
 strip =
 mq =
 rebase =
+shelve =
 
 [ui]
 username = Chason Choate <chason.choate@digitalreasoning.com>

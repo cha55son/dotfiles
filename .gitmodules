@@ -10,3 +10,6 @@
 [submodule ".vim/bundle/git-gutter-vim"]
 	path = .vim/bundle/git-gutter-vim
 	url = git@github.com:akiomik/git-gutter-vim.git
+[submodule ".vim/bundle/vim-less"]
+	path = .vim/bundle/vim-less
+	url = git@github.com:groenewege/vim-less.git
