@@ -18,4 +18,5 @@ alias tmuxl='tmux list-sessions'
 alias tmuxa='tmux attach-session -d -t'
 alias gits='git status'
 alias gitb='git branch'
+alias gitl="git log --branches --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 alias vim='vim -p'
