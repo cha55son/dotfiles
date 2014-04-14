@@ -7,12 +7,12 @@ mq =
 rebase =
 shelve =
 
+[hostfingerprints]
+hg.corp.digitalreasoning.com = 3e:a9:4c:06:72:1e:fa:0c:84:69:9c:37:51:15:0c:88:f1:11:c0:07
+
 [ui]
 username = Chason Choate <chason.choate@digitalreasoning.com>
 ignore = ~/.hgignore
-
-[hostfingerprints]
-hg.corp.digitalreasoning.com = 34:3A:93:37:30:6A:0D:7C:16:2F:5E:68:83:E3:FE:01:99:9E:A9:11
 
 [auth]
 drsi.prefix = hg.corp.digitalreasoning.com
